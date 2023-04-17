@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
 function Court(props) {
-    const [playerQueue, setPlayerQueue] = useState(["Kevin", "Aldwin", "Ethan"]);
+    const [playerQueue, setPlayerQueue] = useState([]);
     const namesRef = useRef()
 
     function onAddButtonClick(e) {
