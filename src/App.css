@@ -1,3 +1,9 @@
+body {
+    background-color: #121212;
+    color: #FFFFFF;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
 .App {
     display: flex;
     margin: auto;
@@ -9,7 +15,41 @@
     margin: 10px;
     padding: 0px 10px 10px 10px;
     border-radius: 10px;
+    background-color: rgb(37, 37, 37);
 }
+
+.modern-input {
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .modern-input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    background-color: #fff;
+  }
+
+  .modern-add-button {
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007bff;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .modern-add-button:hover {
+    background-color: #0069d9;
+  }
 
 .name {
     margin: 5px 5px 5px 5px;

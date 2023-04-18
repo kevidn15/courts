@@ -23,7 +23,7 @@ function Court(props) {
         return (
             <div className="name">
                 {name}
-                <button onClick={() => removeName(name)}>Remove</button>
+                <button onClick={() => removeName(name)}>-</button>
             </div>
         )
     }
@@ -56,8 +56,10 @@ function Court(props) {
     return (
         <div className="Court">
             <h1>Court {props.number}</h1>
-            <input ref={namesRef} type="text"></input>
-            <button onClick={onAddButtonClick}>Add new</button>
+            <div class="input-wrapper">
+                <input type="text" class="modern-input" ref={namesRef} placeholder="Enter your name"></input>
+                <button class="modern-add-button" onClick={onAddButtonClick}>Add</button>
+            </div>
             <NamesList names={playerQueue} />
             
         </div>
