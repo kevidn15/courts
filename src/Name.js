@@ -1,8 +1,4 @@
-function Name(props) {
-    console.log(props.playerQueue + " in Name.js")
-    console.log(props.name + " in Name.js")
-    console.log(props.handleRemove)
-    
+function Name(props) {    
     function removeName(name) {
         props.handleRemove(name)
     }
