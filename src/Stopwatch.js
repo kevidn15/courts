@@ -1,43 +1,36 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { useTimer } from "react-use-precision-timer";
 
 function Stopwatch() {
   const [isRunning, setIsRunning] = useState(true);
   const [elapsedTime, setElapsedTime] = useState(0);
-  const previousTimeRef = useRef();
+
+  // eslint-disable-next-line
+  const callback = useCallback(() => setElapsedTime(elapsedTime + 1))
+  const timer = useTimer({delay: 1000}, callback);
 
   useEffect(() => {
-    previousTimeRef.current = Date.now();
+    timer.start()
+  // eslint-disable-next-line
   }, []);
 
-  useEffect(() => {
-    let intervalId;
-
+  function handleStartStop() {
     if (isRunning) {
-      intervalId = setInterval(() => {
-        setElapsedTime(prevElapsedTime => prevElapsedTime + (Date.now() - previousTimeRef.current));
-        previousTimeRef.current = Date.now();
-      }, 10);
+      timer.pause()
+      setIsRunning(false)
     }
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, [isRunning]);
-
-  const handleStartStop = () => {
-    setIsRunning(prevIsRunning => !prevIsRunning);
-    if (!isRunning) {
-      previousTimeRef.current = Date.now();
+    else {
+      timer.resume()
+      setIsRunning(true)
     }
-  };
+  }
 
-  const handleReset = () => {
-    setElapsedTime(0);
-    previousTimeRef.current = Date.now();
-  };
+  function handleReset() {
+    setElapsedTime(0)
 
-  function formatTime(milliseconds) {
-    const seconds = Math.floor(milliseconds / 1000);
+  }
+
+  function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;
     const formattedMinutes = String(minutes).padStart(2, '0');

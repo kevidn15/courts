@@ -35,7 +35,7 @@ function Court(props) {
             <h1>Court {props.number}</h1>
             <div className="input-wrapper">
                 <input type="text" className="modern-input" ref={namesRef} placeholder="Enter your name" onKeyPress={handleKeyPress}></input>
-                <button className="modern-add-button" onClick={onAddButtonClick}>Add</button>
+                <button className="modern-add-button" onClick={onAddButtonClick}>+</button>
             </div>
             
             <NamesList playerQueue={playerQueue} handleRemove={handleRemove} />

@@ -26,6 +26,7 @@ body {
     background-color: #f1f1f1;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
+    margin-bottom: 10px;
   }
   
   .modern-input:focus {
@@ -65,7 +66,8 @@ body {
   font-size: 2rem;
   outline: 1px solid white;
   border-radius: 10px;
-  padding: 5px 5px 5px 5px;
+  padding: 10px 5px 10px 5px;
+  margin: 20px 10px 20px 10px;
 }
 
 .stopwatch h1, h2, h3, h4, h5, h6 {
