@@ -13,7 +13,7 @@ body {
     flex: 1 1 auto;
     outline: 1px solid black;
     margin: 10px;
-    padding: 0px 10px 10px 10px;
+    padding: 0px 20px 10px 20px;
     border-radius: 10px;
     background-color: rgb(37, 37, 37);
 }
@@ -68,7 +68,14 @@ body {
 }
 
 .name > button {
-    float: right;
+    display: inline-block;
+    margin-left: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 
@@ -76,10 +83,12 @@ body {
   background-color: #272727;
   color: #FFFFFF;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   box-shadow: 0 0 5px #000000;
   width: 80%;
+  font-size: 20px;
+  margin: 5px 0px 5px 0px;
 }
 
 .stopwatch {
