@@ -44,7 +44,7 @@ function Stopwatch() {
       <h3>Stopwatch</h3>
       <p>{formatTime(elapsedTime)}</p>
       <button onClick={handleStartStop}>
-        {isRunning ? 'Stop' : 'Start'}
+        {isRunning ? 'Stop ' : 'Start'}
       </button>
       <button onClick={handleReset}>Reset</button>
     </div>

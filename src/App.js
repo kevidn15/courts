@@ -1,4 +1,4 @@
-import Court from './Court'
+import Court from './components/Court'
 import './App.css'
 
 function App() {
