@@ -12,9 +12,13 @@ function Name(props) {
         setName(event.target.value)
     }
 
+    function handleBlur() {
+        props.handleUpdate(props.name, name)
+    }
+
     return (
         <div className="name">
-            <input type="text" value={name} onChange={handleChange} />
+            <input type="text" value={name} onChange={handleChange} onBlur={handleBlur} />
             <button onClick={() => removeName(props.name)}>
             -
             </button>

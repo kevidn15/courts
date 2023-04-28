@@ -30,6 +30,12 @@ function Court(props) {
         setPlayerQueue(queueCopy)
     }, [playerQueue])
 
+    const handleUpdate = useCallback((name, newName) => {
+        const queueCopy = [...playerQueue]
+        queueCopy[queueCopy.indexOf(name)] = newName
+        setPlayerQueue(queueCopy)
+    }, [playerQueue])
+
     return (
         <div className="Court">
             <h1>Court {props.number}</h1>
@@ -38,7 +44,7 @@ function Court(props) {
                 <button className="modern-add-button" onClick={onAddButtonClick}>+</button>
             </div>
             
-            <NamesList playerQueue={playerQueue} handleRemove={handleRemove} />
+            <NamesList playerQueue={playerQueue} handleRemove={handleRemove} handleUpdate={handleUpdate}/>
             
         </div>
     )
